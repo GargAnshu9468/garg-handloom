@@ -21,6 +21,8 @@ function initMobileNavigation() {
   if (!toggleBtn || !drawer) return;
 
   function openDrawer() {
+    drawer.style.display = 'block';
+    void drawer.offsetWidth; // Force synchronous reflow so CSS transition triggers
     toggleBtn.classList.add('is-active');
     toggleBtn.setAttribute('aria-expanded', 'true');
     drawer.classList.add('is-open');
@@ -34,6 +36,11 @@ function initMobileNavigation() {
     drawer.classList.remove('is-open');
     drawer.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+    setTimeout(() => {
+      if (!drawer.classList.contains('is-open')) {
+        drawer.style.display = 'none';
+      }
+    }, 380);
   }
 
   toggleBtn.addEventListener('click', () => {

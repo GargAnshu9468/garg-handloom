@@ -315,6 +315,7 @@ body {
 
 /* Luxury Frosted Mobile Drawer */
 .mobile-nav-drawer {
+  display: none;
   position: fixed;
   inset: 0;
   z-index: 250;
@@ -324,6 +325,7 @@ body {
 }
 
 .mobile-nav-drawer.is-open {
+  display: block !important;
   opacity: 1;
   pointer-events: auto;
 }
