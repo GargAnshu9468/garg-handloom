@@ -27,7 +27,8 @@ Designed with modern **Light-Aesthetic Glassmorphism 2.0**, fresh sun-drenched a
 - **Phone:** +91 9050735986
 - **Hours:** Monday – Sunday : 9:30 AM – 8:00 PM (Open all 7 days)
 - **Google Rating:** 4.8 ★ (23 Verified Reviews on Google)
-- **Google Maps:** [Garg Handloom Palwal](https://share.google/nWtrVmPmDtQDxIJOL)
+- **Instagram:** [@aman_garg_parda_wale](https://www.instagram.com/aman_garg_parda_wale?stkn=Ym1sZDEyMnk1cGo0)
+- **Google Maps Navigation:** [Direct Route](https://www.google.com/maps/dir/?api=1&destination=Garg+Handloom+Home+Decor,+Committee+chowk,+Old+GT+Rd,+Palwal,+Haryana+121102)
 
 ---
 
