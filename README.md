@@ -23,9 +23,10 @@ Designed with modern **Light-Aesthetic Glassmorphism 2.0**, fresh sun-drenched a
 ---
 
 ## 📍 Store Information
-- **Address:** Main Market Area, Palwal, Haryana - 121102
+- **Address:** Committee Chowk, Old GT Rd, near Bal Bhawan Park, Minar Gate Area, Palwal, Haryana - 121102
 - **Phone:** +91 9050735986
 - **Hours:** Monday – Sunday : 9:30 AM – 8:00 PM (Open all 7 days)
+- **Google Rating:** 4.8 ★ (23 Verified Reviews on Google)
 - **Google Maps:** [Garg Handloom Palwal](https://share.google/nWtrVmPmDtQDxIJOL)
 
 ---
