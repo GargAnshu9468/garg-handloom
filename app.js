@@ -22,18 +22,25 @@ function initMobileNavigation() {
 
   function openDrawer() {
     drawer.style.display = 'block';
+    drawer.inert = false;
+    drawer.removeAttribute('aria-hidden');
     void drawer.offsetWidth; // Force synchronous reflow so CSS transition triggers
     toggleBtn.classList.add('is-active');
     toggleBtn.setAttribute('aria-expanded', 'true');
     drawer.classList.add('is-open');
-    drawer.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
   }
 
   function closeDrawer() {
+    // Release focus from inside drawer before applying aria-hidden to prevent browser warning
+    if (document.activeElement && drawer.contains(document.activeElement)) {
+      document.activeElement.blur();
+      toggleBtn.focus();
+    }
     toggleBtn.classList.remove('is-active');
     toggleBtn.setAttribute('aria-expanded', 'false');
     drawer.classList.remove('is-open');
+    drawer.inert = true;
     drawer.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
     setTimeout(() => {
