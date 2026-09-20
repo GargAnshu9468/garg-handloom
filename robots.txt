@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://garghandloom.com/sitemap.xml
