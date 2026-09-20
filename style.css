@@ -291,9 +291,53 @@ body.theme-dark .stage-sunlight-beam {
   background: linear-gradient(135deg, rgba(240, 201, 104, 0.28) 0%, rgba(240, 201, 104, 0.05) 60%, transparent 100%);
 }
 
-body.theme-dark .fabric-spec-card {
-  background: rgba(24, 30, 46, 0.85);
-  border-color: rgba(240, 201, 104, 0.2);
+body.theme-dark .fabric-detail-card {
+  background: rgba(22, 28, 42, 0.78);
+  border: 1px solid rgba(240, 201, 104, 0.25);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+body.theme-dark .detail-label {
+  color: var(--accent-gold);
+  font-weight: 600;
+}
+
+body.theme-dark .detail-row strong {
+  color: #f8fafc;
+}
+
+body.theme-dark .stage-tag-badge {
+  background: rgba(18, 24, 36, 0.88);
+  border: 1px solid rgba(240, 201, 104, 0.35);
+  color: #f8fafc;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+body.theme-dark .stage-window-frame {
+  border-color: rgba(240, 201, 104, 0.25);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.65);
+}
+
+body.theme-dark .swatch-dot {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+body.theme-dark .swatch-btn.active .swatch-dot {
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 20px rgba(240, 201, 104, 0.55);
+}
+
+body.theme-dark .card-pill {
+  background: rgba(18, 24, 36, 0.88);
+  border-color: rgba(240, 201, 104, 0.35);
+  color: var(--accent-gold);
+}
+
+body.theme-dark .live-status-pill {
+  background: rgba(18, 24, 36, 0.9);
+  border-color: rgba(240, 201, 104, 0.35);
+  color: #f8fafc;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 body.theme-dark .google-stars-pill {
