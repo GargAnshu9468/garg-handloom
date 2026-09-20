@@ -3,10 +3,50 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initThemeToggle();
   initLightAmbientCanvas();
   initFreshFabricStudio();
   initMobileNavigation();
 });
+
+/* ==========================================================================
+   -1. LUXURY THEME TOGGLE (LIGHT & VELVET MIDNIGHT DARK MODE)
+   ========================================================================== */
+function initThemeToggle() {
+  const toggleBtns = document.querySelectorAll('.theme-toggle-btn');
+  const savedTheme = localStorage.getItem('theme');
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+
+  // Apply saved theme, default to 'light'
+  if (savedTheme === 'dark') {
+    document.body.classList.remove('theme-light');
+    document.body.classList.add('theme-dark');
+    if (metaThemeColor) metaThemeColor.setAttribute('content', '#0c0e14');
+  } else {
+    document.body.classList.remove('theme-dark');
+    document.body.classList.add('theme-light');
+    if (metaThemeColor) metaThemeColor.setAttribute('content', '#faf9f5');
+  }
+
+  function toggleTheme() {
+    const isDark = document.body.classList.contains('theme-dark');
+    if (isDark) {
+      document.body.classList.remove('theme-dark');
+      document.body.classList.add('theme-light');
+      localStorage.setItem('theme', 'light');
+      if (metaThemeColor) metaThemeColor.setAttribute('content', '#faf9f5');
+    } else {
+      document.body.classList.remove('theme-light');
+      document.body.classList.add('theme-dark');
+      localStorage.setItem('theme', 'dark');
+      if (metaThemeColor) metaThemeColor.setAttribute('content', '#0c0e14');
+    }
+  }
+
+  toggleBtns.forEach(btn => {
+    btn.addEventListener('click', toggleTheme);
+  });
+}
 
 /* ==========================================================================
    0. MOBILE DRAWER NAVIGATION & HAMBURGER
@@ -110,23 +150,37 @@ function initLightAmbientCanvas() {
     ctx.clearRect(0, 0, width, height);
     angle += 0.005;
 
-    // Warm Sunbeam Golden Orb
+    const isDark = document.body.classList.contains('theme-dark');
+
+    // Orb 1: Warm Sunbeam Golden Orb / Radiant Champagne Gold
     const orb1X = mouseX + Math.cos(angle) * 100;
     const orb1Y = mouseY + Math.sin(angle) * 60;
-    const grad1 = ctx.createRadialGradient(orb1X, orb1Y, 20, orb1X, orb1Y, 500);
-    grad1.addColorStop(0, 'rgba(235, 205, 130, 0.16)');
-    grad1.addColorStop(0.6, 'rgba(235, 205, 130, 0.05)');
-    grad1.addColorStop(1, 'rgba(235, 205, 130, 0)');
+    const grad1 = ctx.createRadialGradient(orb1X, orb1Y, 20, orb1X, orb1Y, 520);
+    if (isDark) {
+      grad1.addColorStop(0, 'rgba(240, 201, 104, 0.22)');
+      grad1.addColorStop(0.5, 'rgba(240, 201, 104, 0.07)');
+      grad1.addColorStop(1, 'rgba(240, 201, 104, 0)');
+    } else {
+      grad1.addColorStop(0, 'rgba(235, 205, 130, 0.16)');
+      grad1.addColorStop(0.6, 'rgba(235, 205, 130, 0.05)');
+      grad1.addColorStop(1, 'rgba(235, 205, 130, 0)');
+    }
     ctx.fillStyle = grad1;
     ctx.fillRect(0, 0, width, height);
 
-    // Fresh Soft Sage Pastel Orb
+    // Orb 2: Fresh Soft Sage Pastel / Deep Velvet Midnight Teal
     const orb2X = width * 0.25 + Math.sin(angle * 0.7) * 120;
     const orb2Y = height * 0.75 + Math.cos(angle * 0.7) * 90;
     const grad2 = ctx.createRadialGradient(orb2X, orb2Y, 20, orb2X, orb2Y, 600);
-    grad2.addColorStop(0, 'rgba(163, 194, 169, 0.12)');
-    grad2.addColorStop(0.6, 'rgba(163, 194, 169, 0.04)');
-    grad2.addColorStop(1, 'rgba(163, 194, 169, 0)');
+    if (isDark) {
+      grad2.addColorStop(0, 'rgba(70, 130, 180, 0.18)');
+      grad2.addColorStop(0.5, 'rgba(70, 130, 180, 0.05)');
+      grad2.addColorStop(1, 'rgba(70, 130, 180, 0)');
+    } else {
+      grad2.addColorStop(0, 'rgba(163, 194, 169, 0.12)');
+      grad2.addColorStop(0.6, 'rgba(163, 194, 169, 0.04)');
+      grad2.addColorStop(1, 'rgba(163, 194, 169, 0)');
+    }
     ctx.fillStyle = grad2;
     ctx.fillRect(0, 0, width, height);
 
